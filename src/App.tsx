@@ -22,22 +22,25 @@ const DEFAULT_PROFILE: ProfileData = {
       title: "Japanese-Training Web App",
       description: "Japanese-Training Web App som är SEO-optimerad byggd med Astro för maximal crawlbarhet och prestanda. Dynamisk innehållshantering möjliggör snabba uppdateringar samtidigt som statisk genering säkerställer snabba laddningstider och hög sökranking.",
       tech: ["React Native", "Firebase", "Node.js", "Cloud Functions"],
-      liveUrl: "https://github.com/example/video-dating",
+      liveUrl: "https://simpleseniorfitness.com",
+      githubUrl: "https://github.com/ronnedahl/japanese-training-seo",
       imageUrl: japaneseTraining
     },
     {
       title: "AI CV Chat-applikation (RAG)",
       description: "Avancerad conversational AI byggd med Python och LangGraph. Implementerar samma arkitektur som moderna AI-modeller med multi-agent orchestration och retrieval-augmented generation för kontextuellt korrekta svar baserat på dokumentkontext.",
       tech: ["OpenAI", "Ollama", "Pinecone", "Express"],
-      liveUrl: "https://github.com/example/rag-chat",
-      imageUrl:chatBotThumb
+      liveUrl: "https://cv.peterbot.dev/chat",
+      githubUrl: "https://github.com/ronnedahl/my-dev-portfolio-chatbot",
+      imageUrl: chatBotThumb
     },
     {
       title: "AI Restaurant Chat",
       description: "AI-lösning som demonstrerar kodåteranvändning och flexibel arkitektur. Backend från CV-chatboten kombineras med en ny React-frontend för att skapa en branschspecifik lösning för restaurangbranschen.",
       tech: ["TypeScript", "LangChain", "AWS Lambda", "S3"],
-      liveUrl: "https://github.com/example/automation",
-      imageUrl:chatAirest
+      liveUrl: "https://ai-restaurant.peterbot.dev",
+      githubUrl: "https://github.com/ronnedahl/ai-restaurant",
+      imageUrl: chatAirest
     }
   ]
 };
@@ -207,14 +210,26 @@ const App: React.FC = () => {
                     <p className="text-slate-600 text-sm line-clamp-2 mb-4">
                       {project.description}
                     </p>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors"
-                    >
-                      Se projektet <i className="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
+                    <div className="flex items-center gap-4">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors"
+                      >
+                        Se projektet <i className="fa-solid fa-arrow-right text-xs"></i>
+                      </a>
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-900 transition-colors"
+                        >
+                          <i className="fa-brands fa-github"></i> Kod
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
