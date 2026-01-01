@@ -6,6 +6,7 @@ import chatBotThumb from './assets/chat-bot-thumb.png'
 import chatAirest from './assets/ai-restaurant-thumb.png'
 import japaneseTraining from './assets/mobile-japanes-training.png'
 import meProfile from './assets/me-profile-photo.png'
+import robotenImg from './assets/roboten.png'
 
 const DEFAULT_PROFILE: ProfileData = {
   name: "Junior Fullstack Utvecklare",
@@ -21,7 +22,7 @@ const DEFAULT_PROFILE: ProfileData = {
     {
       title: "Japanese-Training Web App",
       description: "Japanese-Training Web App som är SEO-optimerad byggd med Astro för maximal crawlbarhet och prestanda. Dynamisk innehållshantering möjliggör snabba uppdateringar samtidigt som statisk genering säkerställer snabba laddningstider och hög sökranking.",
-      tech: ["React Native", "Firebase", "Node.js", "Cloud Functions"],
+      tech: ["Astro", "Tailwind CSS"],
       liveUrl: "https://simpleseniorfitness.com",
       githubUrl: "https://github.com/ronnedahl/japanese-training-seo",
       imageUrl: japaneseTraining
@@ -29,7 +30,7 @@ const DEFAULT_PROFILE: ProfileData = {
     {
       title: "AI CV Chat-applikation (RAG)",
       description: "Avancerad conversational AI byggd med Python och LangGraph. Implementerar samma arkitektur som moderna AI-modeller med multi-agent orchestration och retrieval-augmented generation för kontextuellt korrekta svar baserat på dokumentkontext.",
-      tech: ["OpenAI", "Ollama", "Pinecone", "Express"],
+      tech: ["Python", "Docker"],
       liveUrl: "https://cv.peterbot.dev/chat",
       githubUrl: "https://github.com/ronnedahl/my-dev-portfolio-chatbot",
       imageUrl: chatBotThumb
@@ -72,16 +73,34 @@ const App: React.FC = () => {
       {/* Sidebar / Profile Summary */}
       <aside className="w-full lg:w-96 bg-white border-r border-slate-200 p-8 flex flex-col gap-8 shadow-sm">
         <div>
-          <div className="relative w-28 h-28 mb-4">
-            <img
-              src={meProfile}
-              alt="Profilfoto"
-              className="w-full h-full object-cover rounded-2xl shadow-xl border-2 border-white ring-4 ring-blue-50"
-            />
-            <div className="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-white shadow-sm" title="Tillgänglig för uppdrag"></div>
+          <div className="flex items-center gap-6">
+            {/* Profilfoto */}
+            <div className="relative w-28 h-28 flex-shrink-0">
+              <img
+                src={meProfile}
+                alt="Profilfoto"
+                className="w-full h-full object-cover rounded-2xl shadow-xl border-2 border-white ring-4 ring-blue-50"
+              />
+              <div className="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-white shadow-sm" title="Tillgänglig för uppdrag"></div>
+            </div>
+
+            {/* AI Chatbot länk */}
+            <a
+              href="https://cv.peterbot.dev/chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center group"
+            >
+              <img
+                src={robotenImg}
+                alt="AI Chatbot"
+                className="w-16 h-16 rounded-full shadow-lg object-cover group-hover:scale-110 transition-transform"
+              />
+              <span className="mt-2 text-xs text-slate-500 text-center group-hover:text-blue-600 transition-colors">Chatta med<br/>min AI-CVbot</span>
+            </a>
           </div>
-          <h1 className="text-2xl font-bold text-slate-800">Peter Andersson</h1>
-          <p className="text-slate-500 text-sm mt-1 italic">Junior utvecklare med senior erfarenhet</p>
+          <h1 className="text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
+          <p className="text-slate-500 text-sm mt-1 italic">Junior AI- & Fullstack-utvecklare | React Native/Android</p>
         </div>
 
         <section>
@@ -122,7 +141,7 @@ const App: React.FC = () => {
         </section>
 
         <footer className="mt-auto pt-8 border-t border-slate-100 text-[10px] text-slate-400 text-center uppercase tracking-widest">
-          Kodad för Karriärväxlare v1.0
+          © 2026 Peter Andersson. All rights reserved.
         </footer>
       </aside>
 
@@ -130,8 +149,8 @@ const App: React.FC = () => {
       <main className="flex-1 p-6 lg:p-12 overflow-y-auto">
         <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">Profilbeskrivning</h2>
-            <p className="text-slate-500 mt-2 text-lg">Skräddarsydd för CV, LinkedIn eller din portfolio.</p>
+            <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">Om Mig</h2>
+            <p className="text-slate-500 mt-2 text-lg"></p>
           </div>
 
           <div className="flex p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
@@ -159,7 +178,6 @@ const App: React.FC = () => {
                 <div className="w-2 h-2 bg-red-400 rounded-full"></div>
                 <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="ml-4 text-xs font-mono text-slate-400">profile_summary.md</span>
               </div>
               <button
                 onClick={copyToClipboard}
