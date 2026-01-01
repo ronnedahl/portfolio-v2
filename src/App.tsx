@@ -99,7 +99,7 @@ const App: React.FC = () => {
               <span className="mt-2 text-xs text-slate-500 text-center group-hover:text-blue-600 transition-colors">Chatta med<br/>min AI-CVbot</span>
             </a>
           </div>
-          <h1 className="text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
           <p className="text-slate-500 text-sm mt-1 italic">Junior AI- & Fullstack-utvecklare | React Native/Android</p>
         </div>
 
@@ -128,13 +128,13 @@ const App: React.FC = () => {
 
         <section>
           <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Statistik</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
-              <span className="block text-xl font-bold text-slate-800">1+</span>
+          <div className="grid grid-cols-2 gap-2 md:gap-4">
+            <div className="bg-slate-50 p-2 md:p-3 rounded-xl border border-slate-100 text-center">
+              <span className="block text-base md:text-xl font-bold text-slate-800">1+</span>
               <span className="text-[10px] uppercase text-slate-500">År Arbetslivserf.</span>
             </div>
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
-              <span className="block text-xl font-bold text-slate-800">100%</span>
+            <div className="bg-slate-50 p-2 md:p-3 rounded-xl border border-slate-100 text-center">
+              <span className="block text-base md:text-xl font-bold text-slate-800">100%</span>
               <span className="text-[10px] uppercase text-slate-500">Kodnyfiken</span>
             </div>
           </div>
@@ -149,16 +149,16 @@ const App: React.FC = () => {
       <main className="flex-1 p-6 lg:p-12 overflow-y-auto">
         <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">Om Mig</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Om Mig</h2>
             <p className="text-slate-500 mt-2 text-lg"></p>
           </div>
 
-          <div className="flex p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div className="flex p-0.5 md:p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
             {Object.values(Tone).map((tone) => (
               <button
                 key={tone}
                 onClick={() => setActiveTone(tone as Tone)}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                className={`px-1.5 py-0.5 md:px-4 md:py-2 text-[10px] md:text-sm font-medium rounded-lg transition-all ${
                   activeTone === tone
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
                     : 'text-slate-600 hover:bg-slate-50'
@@ -190,9 +190,9 @@ const App: React.FC = () => {
                 )}
               </button>
             </div>
-            <div className="p-8 lg:p-12">
+            <div className="p-4 md:p-8 lg:p-12">
               <div className="prose prose-slate max-w-none">
-                <p className="text-xl lg:text-2xl leading-relaxed text-slate-800 font-medium italic">
+                <p className="text-base md:text-xl lg:text-2xl leading-relaxed text-slate-800 font-medium italic">
                    "{PROFILE_TEXTS[activeTone]}"
                 </p>
               </div>
@@ -256,16 +256,6 @@ const App: React.FC = () => {
 
         </div>
       </main>
-
-      {/* Persistent Call-to-Action for Mobile */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 shadow-2xl flex gap-2 z-50">
-         <button
-           onClick={copyToClipboard}
-           className="flex-1 py-3 bg-slate-900 text-white font-bold rounded-xl"
-         >
-           {showCopied ? "Kopierat!" : "Kopiera Beskrivning"}
-         </button>
-      </div>
     </div>
   );
 };
