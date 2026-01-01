@@ -99,7 +99,7 @@ const App: React.FC = () => {
               <span className="mt-2 text-xs text-slate-500 text-center group-hover:text-blue-600 transition-colors">Chatta med<br/>min AI-CVbot</span>
             </a>
           </div>
-          <h1 className="text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
           <p className="text-slate-500 text-sm mt-1 italic">Junior AI- & Fullstack-utvecklare | React Native/Android</p>
         </div>
 
@@ -149,7 +149,7 @@ const App: React.FC = () => {
       <main className="flex-1 p-6 lg:p-12 overflow-y-auto">
         <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight">Om Mig</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Om Mig</h2>
             <p className="text-slate-500 mt-2 text-lg"></p>
           </div>
 
@@ -190,9 +190,9 @@ const App: React.FC = () => {
                 )}
               </button>
             </div>
-            <div className="p-8 lg:p-12">
+            <div className="p-4 md:p-8 lg:p-12">
               <div className="prose prose-slate max-w-none">
-                <p className="text-xl lg:text-2xl leading-relaxed text-slate-800 font-medium italic">
+                <p className="text-base md:text-xl lg:text-2xl leading-relaxed text-slate-800 font-medium italic">
                    "{PROFILE_TEXTS[activeTone]}"
                 </p>
               </div>
