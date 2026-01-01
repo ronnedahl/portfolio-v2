@@ -6,6 +6,7 @@ import chatBotThumb from './assets/chat-bot-thumb.png'
 import chatAirest from './assets/ai-restaurant-thumb.png'
 import japaneseTraining from './assets/mobile-japanes-training.png'
 import meProfile from './assets/me-profile-photo.png'
+import robotenImg from './assets/roboten.png'
 
 const DEFAULT_PROFILE: ProfileData = {
   name: "Junior Fullstack Utvecklare",
@@ -90,10 +91,12 @@ const App: React.FC = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center group"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <i className="fa-solid fa-robot text-white text-2xl"></i>
-              </div>
-              <span className="mt-2 text-xs text-slate-500 text-center group-hover:text-blue-600 transition-colors">Chatta med<br/>min AI-bot</span>
+              <img
+                src={robotenImg}
+                alt="AI Chatbot"
+                className="w-16 h-16 rounded-full shadow-lg object-cover group-hover:scale-110 transition-transform"
+              />
+              <span className="mt-2 text-xs text-slate-500 text-center group-hover:text-blue-600 transition-colors">Chatta med<br/>min AI-CVbot</span>
             </a>
           </div>
           <h1 className="text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
