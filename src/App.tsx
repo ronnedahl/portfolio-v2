@@ -128,13 +128,13 @@ const App: React.FC = () => {
 
         <section>
           <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Statistik</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
-              <span className="block text-xl font-bold text-slate-800">1+</span>
+          <div className="grid grid-cols-2 gap-2 md:gap-4">
+            <div className="bg-slate-50 p-2 md:p-3 rounded-xl border border-slate-100 text-center">
+              <span className="block text-base md:text-xl font-bold text-slate-800">1+</span>
               <span className="text-[10px] uppercase text-slate-500">År Arbetslivserf.</span>
             </div>
-            <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
-              <span className="block text-xl font-bold text-slate-800">100%</span>
+            <div className="bg-slate-50 p-2 md:p-3 rounded-xl border border-slate-100 text-center">
+              <span className="block text-base md:text-xl font-bold text-slate-800">100%</span>
               <span className="text-[10px] uppercase text-slate-500">Kodnyfiken</span>
             </div>
           </div>
