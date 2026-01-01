@@ -1,7 +1,6 @@
 
 export interface ProfileData {
   name: string;
-  age: number;
   role: string;
   education: string;
   previousExperience: string;

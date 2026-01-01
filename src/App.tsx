@@ -9,7 +9,6 @@ import meProfile from './assets/me-profile-photo.png'
 
 const DEFAULT_PROFILE: ProfileData = {
   name: "Junior Fullstack Utvecklare",
-  age: 51,
   role: "Fullstack Developer",
   education: "2-årig webbutvecklingsutbildning (Fulltid)",
   previousExperience: "Media (videoredigering, kameraarbete)",
@@ -90,7 +89,7 @@ const App: React.FC = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-sm">
               <i className="fa-solid fa-user text-blue-500 w-4"></i>
-              <span className="text-slate-700">51 år, Junior Utvecklare</span>
+              <span className="text-slate-700">Junior Utvecklare</span>
             </div>
             <div className="flex items-center gap-3 text-sm">
               <i className="fa-solid fa-graduation-cap text-blue-500 w-4"></i>
@@ -237,27 +236,6 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          {/* LinkedIn Mockup Preview */}
-          <div className="opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 pb-12">
-             <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 ml-1">LinkedIn Förhandsgranskning</h3>
-             <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
-                <div className="flex items-start gap-4 mb-4">
-                   <div className="w-12 h-12 bg-slate-200 rounded-full animate-pulse"></div>
-                   <div className="flex-1">
-                      <div className="h-4 w-32 bg-slate-200 rounded mb-2"></div>
-                      <div className="h-3 w-48 bg-slate-100 rounded"></div>
-                   </div>
-                </div>
-                <div className="space-y-2">
-                   <div className="h-4 w-full bg-slate-50 rounded"></div>
-                   <div className="h-4 w-5/6 bg-slate-50 rounded"></div>
-                   <div className="h-4 w-4/6 bg-slate-50 rounded"></div>
-                </div>
-                <div className="mt-4 p-4 border border-blue-50 bg-blue-50/30 rounded-md">
-                   <p className="text-sm text-slate-700 italic">" ... {PROFILE_TEXTS[activeTone].substring(0, 150)} ... "</p>
-                </div>
-             </div>
-          </div>
         </div>
       </main>
 
