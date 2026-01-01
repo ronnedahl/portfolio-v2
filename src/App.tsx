@@ -5,6 +5,7 @@ import SkillsCloud from './components/SkillsCloud';
 import chatBotThumb from './assets/chat-bot-thumb.png'
 import chatAirest from './assets/ai-restaurant-thumb.png'
 import japaneseTraining from './assets/mobile-japanes-training.png'
+import meProfile from './assets/me-profile-photo.png'
 
 const DEFAULT_PROFILE: ProfileData = {
   name: "Junior Fullstack Utvecklare",
@@ -74,7 +75,7 @@ const App: React.FC = () => {
         <div>
           <div className="relative w-28 h-28 mb-4">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop"
+              src={meProfile}
               alt="Profilfoto"
               className="w-full h-full object-cover rounded-2xl shadow-xl border-2 border-white ring-4 ring-blue-50"
             />
