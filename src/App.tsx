@@ -153,12 +153,12 @@ const App: React.FC = () => {
             <p className="text-slate-500 mt-2 text-lg"></p>
           </div>
 
-          <div className="flex p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div className="flex p-0.5 md:p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
             {Object.values(Tone).map((tone) => (
               <button
                 key={tone}
                 onClick={() => setActiveTone(tone as Tone)}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                className={`px-1.5 py-0.5 md:px-4 md:py-2 text-[10px] md:text-sm font-medium rounded-lg transition-all ${
                   activeTone === tone
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
                     : 'text-slate-600 hover:bg-slate-50'
@@ -256,16 +256,6 @@ const App: React.FC = () => {
 
         </div>
       </main>
-
-      {/* Persistent Call-to-Action for Mobile */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 shadow-2xl flex gap-2 z-50">
-         <button
-           onClick={copyToClipboard}
-           className="flex-1 py-3 bg-slate-900 text-white font-bold rounded-xl"
-         >
-           {showCopied ? "Kopierat!" : "Kopiera Beskrivning"}
-         </button>
-      </div>
     </div>
   );
 };
