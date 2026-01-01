@@ -1,62 +1,10 @@
-
 import React, { useState } from 'react';
-import { ProfileData, Tone } from './types';
+import { Tone } from './types';
 import SkillsCloud from './components/SkillsCloud';
-import chatBotThumb from './assets/chat-bot-thumb.png'
-import chatAirest from './assets/ai-restaurant-thumb.png'
-import japaneseTraining from './assets/mobile-japanes-training.png'
-import meProfile from './assets/me-profile-photo.png'
-import robotenImg from './assets/roboten.png'
-
-const DEFAULT_PROFILE: ProfileData = {
-  name: "Junior Fullstack Utvecklare",
-  role: "Fullstack Developer",
-  education: "2-årig webbutvecklingsutbildning (Fulltid)",
-  previousExperience: "Media (videoredigering, kameraarbete)",
-  skills: [
-    "JavaScript", "TypeScript","Next.js", "React (Vite)", "React Native", "Node.js","Python","PHP"
-    ,"Firebase", "AWS", "MongoDB", "Tailwind CSS", "Git/GitHub", "DevOps basics",
-    "AI/LLM Integration", "RAG", "LangChain","Langgraph","Hugging Face","Ollama","Claude Code","Gemin 3.0"
-  ],
-  projects: [
-    {
-      title: "Japanese-Training Web App",
-      description: "Japanese-Training Web App som är SEO-optimerad byggd med Astro för maximal crawlbarhet och prestanda. Dynamisk innehållshantering möjliggör snabba uppdateringar samtidigt som statisk genering säkerställer snabba laddningstider och hög sökranking.",
-      tech: ["Astro", "Tailwind CSS"],
-      liveUrl: "https://simpleseniorfitness.com",
-      githubUrl: "https://github.com/ronnedahl/japanese-training-seo",
-      imageUrl: japaneseTraining
-    },
-    {
-      title: "AI CV Chat-applikation (RAG)",
-      description: "Avancerad conversational AI byggd med Python och LangGraph. Implementerar samma arkitektur som moderna AI-modeller med multi-agent orchestration och retrieval-augmented generation för kontextuellt korrekta svar baserat på dokumentkontext.",
-      tech: ["Python", "Docker"],
-      liveUrl: "https://cv.peterbot.dev/chat",
-      githubUrl: "https://github.com/ronnedahl/my-dev-portfolio-chatbot",
-      imageUrl: chatBotThumb
-    },
-    {
-      title: "AI Restaurant Chat",
-      description: "AI-lösning som demonstrerar kodåteranvändning och flexibel arkitektur. Backend från CV-chatboten kombineras med en ny React-frontend för att skapa en branschspecifik lösning för restaurangbranschen.",
-      tech: ["TypeScript", "LangChain", "AWS Lambda", "S3"],
-      liveUrl: "https://ai-restaurant.peterbot.dev",
-      githubUrl: "https://github.com/ronnedahl/ai-restaurant",
-      imageUrl: chatAirest
-    }
-  ]
-};
-
-// Fördefinierade profiltexter - redigera dessa direkt för att uppdatera innehållet
-const PROFILE_TEXTS: Record<string, string> = {
-  [Tone.PROFESSIONAL]:
-    "Jag är en junior AI- och fullstackutvecklare med bakgrund inom kreativ medieproduktion och en avslutad tvåårig heltidsutbildning i webbutveckling. Under cirka fem år har jag arbetat med videoredigering och visuellt innehåll, bland annat för TV-produktioner, vilket gett mig en stark känsla för kvalitet och användarupplevelse. Idag utvecklar jag skalbara webb- och mobilapplikationer i React och React Native med TypeScript, ofta i serverlösa miljöer. Jag ser AI som ett kraftfullt verktyg för att bygga bättre lösningar – inte som en genväg runt förståelse av koden.",
-
-  [Tone.TECH_HEAVY]:
-    "Junior AI- och fullstackutvecklare med erfarenhet av React, React Native, Node.js och TypeScript. Jag har byggt RAG-lösningar med LangChain och LangGraph, integrerat LLM:er via OpenAI och lokala modeller som Ollama, samt arbetat med vektordatabaser och Firebase. Min bakgrund inom medieproduktion har gett mig ett öga för detaljer och flöden, vilket jag kombinerar med serverless-arkitektur, API-design och molntjänster som AWS och Firebase.",
-
-  [Tone.STORY_DRIVEN]:
-    "Efter cirka fem år inom medieproduktion, där jag arbetade med videoredigering och visuellt berättande, växte intresset för tekniken bakom upplevelserna. Nyfikenheten på hur tjänster faktiskt byggs ledde mig vidare till en tvåårig heltidsutbildning i webbutveckling. Idag utvecklar jag fullstack-applikationer med React, TypeScript och AI-stöd, med fokus på tydlig logik, användarvärde och långsiktigt hållbara lösningar."
-};
+import { DEFAULT_PROFILE } from './data/profile';
+import { PROFILE_TEXTS } from './data/profileTexts';
+import meProfile from './assets/me-profile-photo.png';
+import robotenImg from './assets/roboten.png';
 
 const App: React.FC = () => {
   const [activeTone, setActiveTone] = useState<Tone>(Tone.PROFESSIONAL);
