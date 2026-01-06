@@ -49,6 +49,16 @@ const App: React.FC = () => {
           </div>
           <h1 className="text-xl md:text-2xl font-bold text-slate-800 mt-4">Peter Andersson</h1>
           <p className="text-slate-500 text-sm mt-1 italic">Junior AI- & Fullstack-utvecklare | React Native/Android</p>
+          <div className="mt-3 space-y-1">
+            <a href="tel:0704893020" className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              <i className="fa-solid fa-phone text-blue-500 w-4"></i>
+              <span>0704893020</span>
+            </a>
+            <a href="mailto:dev.peter.ai@gmail.com" className="flex items-center gap-2 text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              <i className="fa-solid fa-envelope text-blue-500 w-4"></i>
+              <span>dev.peter.ai@gmail.com</span>
+            </a>
+          </div>
         </div>
 
         <section>
