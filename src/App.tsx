@@ -3,7 +3,7 @@ import { Tone } from './types';
 import SkillsCloud from './components/SkillsCloud';
 import { DEFAULT_PROFILE } from './data/profile';
 import { PROFILE_TEXTS } from './data/profileTexts';
-import meProfile from './assets/me-profile-photo.png';
+import meProfile from './assets/peter-profile-small.png';
 import robotenImg from './assets/roboten.png';
 
 const App: React.FC = () => {
