@@ -1,7 +1,7 @@
 import { ProfileData } from '../types';
 import chatBotThumb from '../assets/chat-bot-thumb.png';
 import chatAirest from '../assets/ai-restaurant-thumb.png';
-import japaneseTraining from '../assets/mobile-japanes-training.png';
+import japaneseTraining from '../assets/japanese-training-small.png';
 
 export const DEFAULT_PROFILE: ProfileData = {
   name: "Junior Fullstack Utvecklare",
